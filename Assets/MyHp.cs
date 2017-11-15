@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class MyHp : MonoBehaviour {
 
-	private int hp;
+	public int hp;
 	private int oldHp;
 	private Text hpText;
 
@@ -13,7 +13,7 @@ public class MyHp : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		hp = 100;
+		
 		oldHp = hp;
 		hpText = GetComponentInChildren<Text> ();
 		hpText.text = hp.ToString ();
@@ -32,5 +32,9 @@ public class MyHp : MonoBehaviour {
 		hp -= damage;
 		hpText.text = hp.ToString ();
 		oldHp = hp;
+	}
+
+	public int GetHpCount() {
+		return hp;
 	}
 }

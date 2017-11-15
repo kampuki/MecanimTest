@@ -21,6 +21,7 @@ public class ToFromAHight : MonoBehaviour {
 		fallFlag = false;
 		myHp = transform.Find("Hp").GetComponent<MyHp>();
 		LineRenderer renderer = gameObject.GetComponent<LineRenderer> ();
+		rayPosition = GetComponent<Transform> ();
 	}
 	
 	// Update is called once per frame
@@ -30,7 +31,7 @@ public class ToFromAHight : MonoBehaviour {
 			if (fallFlag) {
 				distance = fallPosition - transform.position.y;
 				if (distance >= damageDistance) {
-					myHp.Damage (distance - damageDistance);
+					myHp.Damage ((int)(distance - damageDistance));
 				}
 				fallFlag = false;
 			}
